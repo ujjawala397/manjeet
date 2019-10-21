@@ -1,3 +1,9 @@
+<?php 
+if (session_status() === PHP_SESSION_ACTIVE) {
+  
+  header("refresh:0;url=access.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,9 +28,8 @@
     <a href="truck.php">Book</a>
     <a href="contact_us.php">Contact</a>
     <a href="about.php">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fas fa-bars"></i>
-    </a>
+    <a href="medcare/index.html">How we work</a>
+  
   </div>
 
   <div class="container-fluid c3 col-sm-12 col-md-12 col-xs-12 col-lg-12">

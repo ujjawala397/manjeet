@@ -80,6 +80,7 @@ session_start();
 	      <th scope="col">Destination Location</th>
 	      <th scope="col">Driver name</th>
         <th scope="col">Price</th>
+        <th scope="col">Book now</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -90,24 +91,19 @@ session_start();
 				{
 			   	 echo "<tr>";
 			   	 ?>
-          <td><a href='send-email/index.php'><?php echo $i; ?> 
-                </a>
+          <td><?php echo $i; ?> 
           </td>
-			   	 <td><a href='send-email/index.php'><?php echo $row['truck_no']; ?> 
-                </a>
+			   	 <td><?php echo $row['truck_no']; ?> 
           </td>
-          <td><a href='send-email/index.php'><?php echo $row['source']; ?>
-                </a>
+          <td><?php echo $row['source']; ?> 
           </td>
-          <td><a href='send-email/index.php'><?php echo $row['destination']; ?> 
-                </a>
+          <td><?php echo $row['destination']; ?> 
           </td>
-          <td><a href='send-email/index.php'><?php echo $row['driver_name']; ?> 
-                </a>
+          <td><?php echo $row['driver_name']; ?> 
           </td>
-           <td><a href='send-email/index.php'><?php echo $row['price']; ?> 
-                </a>
+           <td><?php echo $row['price']; ?> 
           </td>
+          <td><a href="send-email/index.php?id=<?php echo $row['id']?>">Book now</td>
 
           
            <?php
@@ -121,11 +117,12 @@ session_start();
 </div>
 <div class="col-sm-4">
     <div id="floating-panel">
-    <b>Start: </b>
-    <input id="start">
+    <b class="btn btn-primary">Source: </b>
 
-    <b>End: </b>
-    <input id="end">
+    <input  id="start" value=<?php echo $source?>  readonly>
+    <br>
+    <b class="btn btn-primary">Detination: </b>
+    <input id="end" value=<?php echo $destination?> readonly>
 
     </div>
     <div id="map"></div>
@@ -177,8 +174,8 @@ session_start();
         var onChangeHandler = function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
         };
-        document.getElementById('start').addEventListener('change', onChangeHandler);
-        document.getElementById('end').addEventListener('change', onChangeHandler);
+        document.getElementById('start').addEventListener('mouseenter', onChangeHandler);
+        document.getElementById('end').addEventListener('mouseenter', onChangeHandler);
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -189,8 +186,6 @@ session_start();
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
           }
         });
       }

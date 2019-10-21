@@ -6,27 +6,57 @@ session_start();
 <head>
 	<title>Send mail from PHP using SMTP</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../js/date.js">
+	<link rel="stylesheet" type="text/css" href="../css/date.css">
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src='script.js'></script>
+  
+
+  <!-- Time css and script -->
+   	<!-- This have distorted styling-->
+    
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    
+    <!--  -->
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+
+   <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+
+    <script type="text/javascript">
+      $(function() {
+        $('#datetimepicker3').datetimepicker({
+          pickDate: false
+
+        });
+      });
+    </script>
+	<!--   TIme script ended -->
+
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
 
 		<?php
-			
+			$id=$_GET['id'];
 		    $connection=mysqli_connect('localhost','root','');
 		    mysqli_select_db($connection,'transport');
-
-		    /////////////////////////////////////////////////////////////
-		    //SESSION EMAIL AND PASSWORD NOT WORKING
-		    
-		    //truckers
-
-		    // $email=$_SESSION['mail'];
-		    // $password=$_SESSION['pasw'];
-		  
-		    $email='ujjawala397@gmail.com';			
-
-		     ?>
+            $sql="select * from trucks where id=$id";
+            $result=mysqli_query($connection,$sql);
+            $row=mysqli_fetch_assoc($result);
+            $email=$row['email'];
+     		$price=$row['price'];
+     		$_SESSION['price']=$price;
+		?>
 
 
 <div class="container">
@@ -71,7 +101,7 @@ session_start();
 			$mail->isHTML(true);                                  // Set email format to HTML
 
 			$mail->Subject = $_POST['subject'];
-			$mail->Body    = '<div>Truck booking is done on  </div>';
+			$mail->Body    = "<div style='background-color:cyan'><h1>Truck booking is done of ".$_POST['date']."  date and time is ".$_POST['time']."<br><br><br> The weight to be delivered is".$_POST['weight']."quintals<br><br><br> The product to be delivered is".$_POST['item']."Truck booking price ".$_POST['price']."</h1></div>";
 			$mail->AltBody = $_POST['message'];
 
 			if(!$mail->send()) {
@@ -80,7 +110,7 @@ session_start();
 			} else {
 				$message='Message has been sent sucessfully we will contact you soon';
 			    echo "<script type='text/javascript'>alert('$message');</script>";
-			 header("refresh:0;url=../access.php");
+			 header("refresh:0;url=../paytm/shopping.php");
 			}
 		}
 	 ?>
@@ -88,23 +118,56 @@ session_start();
     <div class="col-md-9 col-md-offset-2">
         <form role="form" method="post" enctype="multipart/form-data">
 	    	 <div class="row">
+	            
 	            <div class="col-sm-9 form-group">
-	                <label for="subject">Enter date and time:</label>
-	                <input type="text" class="form-control" id="subject" name="subject" value="Truck booking of XX/XX/2019 date and time XX:YY pm  " maxlength="50">
+	                <label for="subject" hidden>Truck Booking</label>
+	                <input type="text" class="form-control" id="subject" name="subject" value="You have got Truck booking " maxlength="50" hidden>
+	            </div>
+            </div>
+
+            <div class="row">
+	            
+	            <div class="col-sm-9 form-group">
+	                <label for="subject">Enter date:</label>
+	                <input type="date"id="birth_date" class="form-control" name="date" placeholder="Enter Date">
+	           
+	            </div>
+
+
+	             <div  id="datetimepicker3" class="col-sm-9 form-group" class="input-append">
+	             	 <label for="subject">Enter time:</label>
+    				<input data-format="hh:mm:ss" type="text" class="form-control" value="Enter time" name="time" readonly="">
+    				<span class="add-on">
+      				<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>	
+    </span>
+  </div>
+	            <div class="col-sm-9 form-group">
+	                <label for="subject">Enter weight:</label>
+	                <input type="number" class="form-control" name="weight" placeholder="Enter weight in quintals">
+	            </div>
+
+	            <div class="col-sm-9 form-group">
+	                <label for="subject">Price:</label>
+	                <input  readonly type="text" class="form-control" name="price" value="<?php echo $price ?>Rs" >
+	            </div>
+
+
+	            
+	            <div class="col-sm-9 form-group">
+	                <label for="subject">Choose Item to be shipped</label><br>
+	                <select name="item" style="height: 30px; width: 200px " >
+	                	<option>furniture</option>
+	                	<option>food</option>
+	                	<option>luggage</option>
+	                	<option>other</option>
+	                </select>
 	            </div>
             </div>
 
             
-           
             <div class="row">
                 <div class="col-sm-9 form-group">
-                    <label for="name">Upload your product image:</label>
-                    <input name="file[]" multiple="multiple" class="form-control" type="file" id="file">
-                </div>
-            </div>
-             <div class="row">
-                <div class="col-sm-9 form-group">
-                    <button type="submit" name="sendmail" class="btn btn-lg btn-success btn-block">Book Now</button>
+                    <button type="submit" name="sendmail" class="btn btn-lg btn-primary btn-block">Book Now</button>
                 </div>
             </div>
         </form>

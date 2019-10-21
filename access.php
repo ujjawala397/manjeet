@@ -2,6 +2,7 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,8 @@ session_start();
     <a href="truck.php">Book</a>
     <a href="contact_us.php">Contact</a>
     <a href="about.php">About</a>
-    <span onclick="document.getElementById('id02').style.display='block'"><a> Add Truck</a></span>
+    <a href="truckform.php"> Add Truck</a>
+    <a href="order.php">Orders</a>
   </div>
   <div class="container-fluid">
 

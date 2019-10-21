@@ -1,4 +1,7 @@
-<!doctype html>
+<?php
+
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -10,34 +13,39 @@
     <!-- animate CSS -->
     <!-- themify CSS -->
     <link rel="stylesheet" href="css/style_about.css">
+     <link rel="stylesheet" type="text/css" href="css/addtruck.css">
+ 
+
+
+  <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity= 
+  "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="javascript.js"></script>
+
 </head>
 
 <body>
+    <div class="container-fluid  r1">
+    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
+    <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
+  </div>
+  <div class="topnav" id="myTopnav">
+    <a href="main.php" class="active">Home</a>
+     <a href="logout.php" class="login">Logout
+    <?php
+     echo $_SESSION['mail'];
+    ?>  
+    </a> 
+   
+    <a href="truck.php">Book</a>
+    <a href="contact_us.php">Contact</a>
+    <a href="about.php">About</a>
+    <a href="truckform.php"> Add Truck</a>
+
+
+  </div>
     <!--::header part start::-->
-    <header >
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                            id="navbarSupportedContent">
-                     
-                        </div>
-                        <a href="#" class="btn_1 d-none d-lg-inline-block">6239030525  8360659012</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header part end-->
-
+   
    <!-- breadcrumb start-->
    <section class="breadcrumb breadcrumb_bg">
         <div class="container">
@@ -63,12 +71,12 @@
                         <h2> A Dedicated Transporter Since 2019</h2>
                         <p>we have noticed that people are facing problem while transporting goods from place to place as thay have to send to transport center first and then have to wait for the dispatch.</p>
                         <p>after noticing the problem we have started our services .small scale business man can also afford our service as it is cheap in comparision to other offline transporter.</p>
-                        <a href="#" class="btn_1">our services</a>
+                        <a href="access.php" class="btn_1">our services</a>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 col-md-6">
                     <div class="about_img">
-                        <img src="img/jojo.png" alt="#">
+                        <img src="img/icon/jojo.png" alt="#">
                     </div>
                 </div>
             </div>
@@ -136,19 +144,19 @@
                 <div class="col-lg-12">
                     <div class="client_review_iner owl-carousel">
                         <div class="client_review_single">
-                            <img src="img/anu.jpg" alt="">
+                            <img src="img/icon/anu.jpg" alt="">
                             <h4>Anil sapkota</h4>
                             <span>Owner of e-vehicle</span>
                             <p>front end developer and handler of public query about the availablity of vehicles.</p>
                         </div>
                         <div class="client_review_single">
-                            <img src="img/juju.jpg" alt="">
+                            <img src="img/icon/juju.jpg" alt="">
                             <h4>Ujjawal aggrawal</h4>
                             <span>Owner of e-vehicle</span>
                             <p>back end developer and the operational handeler of e-vehical company.</p>
                         </div>
                         <div class="client_review_single">
-                            <img src="img/riti.jpg" alt="">
+                            <img src="img/icon/riti.jpg" alt="">
                             <h4>Ritika singhal</h4>
                             <span>Owner of e-vehicle</span>
                             <p>Bug handeler and import export handler of e-vehicle company.</p>
@@ -170,7 +178,7 @@
                         <h2>Many more Features are Waiting!</h2>
                         <p>Thinking about the best way to transport goods? Have you ever faced a problem in sending goods then contact us ?</p>
                         <h1>click bellow</h1>
-                        <a href="#" class="btn_1">contact us</a>
+                        <a href="contact_us.php" class="btn_1">contact us</a>
                     </div>
                 </div>
             </div>
@@ -179,66 +187,38 @@
     <!-- become a member part end -->
 
     <!-- footer part start-->
-    <footer class="footer-area section_padding">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single-footer-widget footer_1">
-                        <h4>About Us</h4>
-                        <p>BY the moto to provide best service in low price and in a safe way we have started our service.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Contact us</h4>
-                        <div class="contact_info">
-                            <p>lpu,phagwara,punjab</p>
-                            <h2>6239030525</h2>
-                            <h2>8360659012</h2>
-                             <h2>9115512687</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-8 col-lg-5">
-                    <div class="single-footer-widget footer_2">
-                         <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscribe_form relative mail_part">
-                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                    class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = ' Email Address '">
-                                <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm">register<i class="ti-arrow-right"></i></button>
-                                <div class="mt-10 info"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p class="footer-text m-0">
-
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="social_icon">
-                                    <a href="#"> <i class="ti-facebook"></i> </a>
-                                    <a href="#"> <i class="ti-twitter-alt"></i> </a>
-                                    <a href="#"> <i class="ti-instagram"></i> </a>
-                                    <a href="#"> <i class="ti-skype"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
     <!-- footer part end-->
+
+<table class="table table-dark">
+  <thead>
+    <tr style="font-size: 30px;">
+      <th scope="col">#</th>
+      <th scope="col">About</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="font-size: 20px">
+      <th scope="row"></th>
+      <td>Makes your<br>
+          work easier</td>
+      <td>+91-9412131680<br>
+                <a  href="https://www.instagram.com/jujuspices/"> 
+        <i class="fab fa-instagram fa-2x"></i> </a>
+                <a href="https://www.facebook.com/Juju-Spices-1681765988789374/?modal=admin_todo_tour"> 
+        <i class="fab fa-facebook fa-2x"></i></a>
+        <i class="fab fa-whatsapp fa-2x"></i>
+
+        <br>
+
+      </td>
+      <td><i class="fas fa-map-marker-alt fa-3x"></i><br>Dal Mandi Pul<br>
+        Saharanpur<br>Uttar Pradesh</td>
+    </tr>
+  </tbody>
+</table>
 
     <!-- jquery plugins here-->
     <!-- jquery -->

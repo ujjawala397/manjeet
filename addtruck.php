@@ -1,6 +1,6 @@
 
 <?php
-
+$flag=1;
 $con=mysqli_connect('localhost','root','');
 	if(!$con)
 	{
@@ -18,7 +18,7 @@ $con=mysqli_connect('localhost','root','');
 		{
 			$message='aadhar number not found<br>';
 			echo "<script type='text/javascript'>alert('$message');</script>";
-				
+		    $flag=0;		
 		}
 		else
 		{
@@ -27,6 +27,7 @@ $con=mysqli_connect('localhost','root','');
 			{	
 				$message="only fixed numbers are allowed in aadhar";
 				  echo "<script type='text/javascript'>alert('$message');</script>";
+		          $flag=0;		  
 				return false;
 			}
 			else
@@ -44,7 +45,7 @@ $con=mysqli_connect('localhost','root','');
 		if(empty($b))
 		{
 			$message='truck number not found<br>';echo "<script type='text/javascript'>alert('$message');</script>";
-				
+			$flag=0;
 		}
 		else
 		{
@@ -53,6 +54,7 @@ $con=mysqli_connect('localhost','root','');
 			{	
 				$message="only fixed numbers are allowed in truck";
 				  echo "<script type='text/javascript'>alert('$message');</script>";
+				  $flag=0;
 				return false;
 			}
 			else
@@ -68,7 +70,7 @@ $con=mysqli_connect('localhost','root','');
 		{
 			$message='Source Cant be empty<br>';
 			echo "<script type='text/javascript'>alert('$message');</script>";
-				
+		    $flag=0;
 		}
 		else
 		{
@@ -77,6 +79,7 @@ $con=mysqli_connect('localhost','root','');
 			{	
 				$message="only characters allowed in source<br>";
 				echo "<script type='text/javascript'>alert('$message');</script>";
+				$flag=0;
 				return false;
 			}
 			else
@@ -94,6 +97,7 @@ $con=mysqli_connect('localhost','root','');
 		{
 			$message='destination cannot be empty';
 			echo "<script type='text/javascript'>alert('$message');</script>";
+			$flag=0;
 			return false;
 		}
 		else
@@ -103,7 +107,7 @@ $con=mysqli_connect('localhost','root','');
 			{	
 				$message="only characters allowed in destination";
 				echo "<script type='text/javascript'>alert('$message');</script>";
-				
+				$flag=0;
 			}
 			else
 			{
@@ -124,7 +128,7 @@ $con=mysqli_connect('localhost','root','');
 			{	
 				$message="only characters allowed in driver name";
 				echo "<script type='text/javascript'>alert('$message');</script>";
-				
+				$flag=0;
 			}
 			else
 			{
@@ -136,6 +140,7 @@ $con=mysqli_connect('localhost','root','');
 		{
 			$message='price not found<br>';
 			echo "<script type='text/javascript'>alert('$message');</script>";
+			$flag=0;
 			return false;
 		}
 		else
@@ -146,6 +151,7 @@ $con=mysqli_connect('localhost','root','');
 				if($price<10000 && $price>0){
 				$message="Max price is 9999 <br>";
 				echo "<script type='text/javascript'>alert('$message');</script>";
+				$flag=0;
 				  return false;
 				}
 			}
@@ -160,6 +166,7 @@ $con=mysqli_connect('localhost','root','');
 		  $message = "Email Not Found";
 		  echo "<script type='text/javascript'>alert('$message');</script>";
 		  header("refresh:2;url=main.php");
+		  $flag=0;
 		  return false;
 		}
 		else{
@@ -169,6 +176,7 @@ $con=mysqli_connect('localhost','root','');
 			  $message = "Invalid Email";
 			  echo "<script type='text/javascript'>alert('$message');</script>";
 			  header("refresh:2;url=main.php");
+			  $flag=0;
 			  return false;
 			}
 		}
@@ -176,6 +184,7 @@ $con=mysqli_connect('localhost','root','');
 		if(empty($h))
 		{
 			echo 'phone number not found<br>';
+			$flag=0;
 		}
 		else
 		{
@@ -183,11 +192,21 @@ $con=mysqli_connect('localhost','root','');
 			if(!preg_match("/^[0-9]{10}+$/",$phone_number))
 			{	
 				echo "only numbers are allowed in phone number<br>";
+				$flag=0;
 				  return false;
 			}
 			else
 			{
 				echo "Your Phone number is = ".$phone_number.'<br>';
+				if($flag==1)
+				{
+					$otp=mt_rand(100000,999999);
+					$response=file_get_contents("https://2factor.in/API/V1/271d9acd-df6d-11e9-ade6-0200cd936042/SMS/$phone_number/$otp");
+					session_start();
+					$_SESSION['otp']=$otp;
+					header("location:verify.php");
+				}
+
 			}
 		}
 

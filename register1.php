@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-</body>
-</html>
+
 
 <?php
 $con=mysqli_connect('localhost','root','');
