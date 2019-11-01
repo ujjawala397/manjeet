@@ -44,15 +44,15 @@ $a=$_POST['otpv'];
 $b=$_SESSION['otp'];
 if($a==$b)
 	{
-	$message = "Mobile verified ";
+	$message = "Mobile verified and We will contact you soon ";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 	header("refresh:2;url=truck.php");
 	}
 	else{
 
-	$message = "Mobile not verified ";
+	$message = "Enter correct otp";
 	echo "<script type='text/javascript'>alert('$message');</script>";
-	header("refresh:2;url=truck.php");
+	header("refresh:0;url=verify.php");
 
 	}
 }

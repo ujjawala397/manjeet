@@ -25,6 +25,7 @@ session_start();
 		body
 		{
 			background-image: url("truck.jpg");
+			background-repeat: no-repeat; 
 			background-size: cover;
 		}
 		.card
@@ -110,10 +111,6 @@ session_start();
 		var autocomplete= new google.maps.places.Autocomplete(destination);
 	}
 </script>
-	
-	
-
-
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU
 &libraries=places&callback=activateSource"></script>

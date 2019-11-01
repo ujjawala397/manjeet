@@ -204,12 +204,8 @@ session_start();
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU
-&libraries=places&callback=activateSource"></script>
+&libraries=places&callback=activateSource&callback=initMap"></script>
 
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU&callback=initMap">
-    </script>
 </div>
 </body>
 </html>

@@ -95,11 +95,11 @@ $sql="INSERT INTO users (Name,Email,Phone,Password,ConfirmPassword) VALUES ('$a'
 
 if(!mysqli_query($con,$sql))
 {
-	echo "<span style='color: black; font-size:20px' /> NOT INSERTED<br>";
+	echo "<span style='color: black; font-size:20px' /> Email or phone already registered<br>";
 }
 else
 {
-	echo "<span style='color: black; font-size:20px' /> INSERTED<br>";
+	echo "<span style='color: black; font-size:20px' /> Registration succesful<br>";
 }
 header("refresh:2;url=main.php");
 ?>

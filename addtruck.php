@@ -66,54 +66,17 @@ $con=mysqli_connect('localhost','root','');
 
 
 		$c=$_POST['source'];
-		if(empty($c))
-		{
-			$message='Source Cant be empty<br>';
-			echo "<script type='text/javascript'>alert('$message');</script>";
-		    $flag=0;
-		}
-		else
-		{
+		
 			$source = $c;
-			if(!preg_match("/^[a-zA-Z]*$/",$source))
-			{	
-				$message="only characters allowed in source<br>";
-				echo "<script type='text/javascript'>alert('$message');</script>";
-				$flag=0;
-				return false;
-			}
-			else
-			{
-				echo "Your City name is = ".$source.'<br>';
-			}
-		}
-
+		
 
 
 
 
 		$d=$_POST['destination'];
-		if(empty($d))
-		{
-			$message='destination cannot be empty';
-			echo "<script type='text/javascript'>alert('$message');</script>";
-			$flag=0;
-			return false;
-		}
-		else
-		{
 			$destination = $d;
-			if(!preg_match("/^[a-zA-Z]*$/",$destination))
-			{	
-				$message="only characters allowed in destination";
-				echo "<script type='text/javascript'>alert('$message');</script>";
-				$flag=0;
-			}
-			else
-			{
-				echo "Your destination name is = ".$destination.'<br>';
-			}
-		}
+		
+
 		$e=$_POST['driver_name'];
 		if(empty($e))
 		{

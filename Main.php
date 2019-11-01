@@ -1,5 +1,5 @@
 <?php 
-if (session_status() === PHP_SESSION_ACTIVE) {
+if (session_status() == PHP_SESSION_ACTIVE) {
   
   header("refresh:0;url=access.php");
 }

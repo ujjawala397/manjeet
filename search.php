@@ -1,21 +1,23 @@
 <?php
     $connection=mysqli_connect('localhost','root','');
     mysqli_select_db($connection,'transport');
- 
-    $query="SELECT * FROM trucks";
+ 	$email=$_POST['searchmail'];
+    $query="SELECT * FROM trucks where email='$email'";
     $data=mysqli_query($connection,$query);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
 
+	<title>Search</title>
 	<link rel="stylesheet" type="text/css" href="css/addtruck.css">
-  	<link rel="stylesheet" type="text/css" href="css/form.css">
-  
-  	<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity= 
-  "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
 
-  <div class="container-fluid  r1">
+</head>
+<body>
+	<div class="container-fluid  r1">
     <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
@@ -26,15 +28,7 @@
     <a href="about.php">About</a>
     <a href="truckform.php"> Add Truck</a>
   </div>
-
-<div col-md-12>
-	<form action="search.php" method="post" class="form-inline md-form form-sm active-purple-2 mt-2" style="text-align: center;">
-  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Enter email"
-    aria-label="Search" name="searchmail">
-  <button type="submit" ><i class="fas fa-search" aria-hidden="true"></i></button>
-</form>
-</div>
- <table class="table table-light">
+<table class="table table-light">
     <thead>
       <tr>
         <th scope="col">Sr no.</th>
@@ -85,14 +79,7 @@
       ?>
     </tbody>
   </table>
-
-
-
-  
-
-
-
-  <table class="table table-dark">
+  <table style="bottom: 0px;position: fixed" class="table table-dark">
   <thead>
     <tr style="font-size: 30px;">
       <th scope="col">#</th>
@@ -122,3 +109,7 @@
     
   	</tbody>
 	</table>
+
+
+</body>
+</html>
