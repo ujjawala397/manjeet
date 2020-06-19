@@ -18,7 +18,7 @@ session_start();
 </head>
 <body>
   <div class="container-fluid  r1">
-    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
+<div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="logo.jpg" alt="Logo here" height="70px"></div>
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
   <div class="topnav" id="myTopnav">
@@ -30,6 +30,8 @@ session_start();
     </a> 
    
     <a href="truck.php">Book</a>
+    <a href="order.php">Orders</a>
+    
     <a href="contact_us.php">Contact</a>
     <a href="about.php">About</a>
     <a href="truckform.php"> Add Truck</a></span>

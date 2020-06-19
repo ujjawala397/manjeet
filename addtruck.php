@@ -164,7 +164,7 @@ $con=mysqli_connect('localhost','root','');
 				if($flag==1)
 				{
 					$otp=mt_rand(100000,999999);
-					$response=file_get_contents("https://2factor.in/API/V1/271d9acd-df6d-11e9-ade6-0200cd936042/SMS/$phone_number/$otp");
+					$response=file_get_contents("https://2factor.in/API/V1/91ecfbec-0df9-11ea-9fa5-0200cd936042/SMS/$phone_number/$otp");
 					session_start();
 					$_SESSION['otp']=$otp;
 					header("location:verify.php");

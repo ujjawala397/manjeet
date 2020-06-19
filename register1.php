@@ -1,5 +1,3 @@
-
-
 <?php
 $con=mysqli_connect('localhost','root','');
 if(!$con)
@@ -95,7 +93,7 @@ $sql="INSERT INTO users (Name,Email,Phone,Password,ConfirmPassword) VALUES ('$a'
 
 if(!mysqli_query($con,$sql))
 {
-	echo "<span style='color: black; font-size:20px' /> Email or phone already registered<br>";
+	echo "<span style='color: black; font-size:20px' /> Email already registered<br>";
 }
 else
 {

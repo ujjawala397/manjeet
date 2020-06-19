@@ -1,3 +1,4 @@
+<!-- SHOW STATUS WHERE `variable_name` = 'Threads_connected' -->
 <?php 
 if (session_status() == PHP_SESSION_ACTIVE) {
   
@@ -19,7 +20,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 </head>
 <body>
   <div class="container-fluid  r1">
-    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
+    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="logo.jpg" alt="Logo here" height="70px"></div>
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
   <div class="topnav" id="myTopnav">
@@ -27,6 +28,9 @@ if (session_status() == PHP_SESSION_ACTIVE) {
     <span onclick="document.getElementById('id01').style.display='block'"><a class="login" > Login</a></span>
     <a href="truck.php">Book</a>
     <a href="contact_us.php">Contact</a>
+    <a href="cap.html">work</a>
+    <a href="cap1.html">fleet</a>
+    
     <a href="about.php">About</a>
     <a href="medcare/index.html">How we work</a>
   

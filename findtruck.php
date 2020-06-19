@@ -44,7 +44,7 @@ session_start();
 
 
   <div class="container-fluid  r1">
-    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
+    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="logo.jpg" alt="Logo here" height="70px"></div>
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
   <div class="topnav" id="myTopnav">
@@ -123,6 +123,7 @@ session_start();
     <br>
     <b class="btn btn-primary">Detination: </b>
     <input id="end" value=<?php echo $destination?> readonly>
+  <b class="btn btn-primary" id="route">show route </b>
 
     </div>
     <div id="map"></div>
@@ -174,8 +175,7 @@ session_start();
         var onChangeHandler = function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
         };
-        document.getElementById('start').addEventListener('mouseenter', onChangeHandler);
-        document.getElementById('end').addEventListener('mouseenter', onChangeHandler);
+        document.getElementById('route').addEventListener('mouseenter', onChangeHandler);
       }
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {

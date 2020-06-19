@@ -37,7 +37,7 @@ session_start();
 <body>
 
   <div class="container-fluid  r1">
-    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="#" alt="Logo here"></div>
+    <div class="col-sm-4 col-md-4 col-xs-4 col-lg-4"><img src="logo.jpg" alt="Logo here" height="70px"></div>
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
 
@@ -50,6 +50,7 @@ session_start();
     	?>  
 	</a>
     <a href="truck.php">Book</a>
+    <a href="order.php">Orders</a>
     <a href="contact_us.php">Contact</a>
     <a href="about.php">About</a>
    	<a href="truckform.php">Add Truck</a>
@@ -66,7 +67,7 @@ session_start();
 					            <div class="card  shadow border-0">
 					              <div class="card-body px-lg-5 py-lg-5">
 					                <div class="text-center text-muted mb-4">
-					                  <h1 style="color: white;">Track your truck</h1>
+					                  <h1 style="color: white;">Book your truck</h1>
 					                </div>
 					                <form role="form" action="findtruck.php" method="POST" enctype="multipart/form-data">
 					                  <div class="form-group mb-3">
@@ -74,7 +75,7 @@ session_start();
 					                      <div class="input-group-prepend">
 					                        <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
 					                      </div>
-					                      <input class="form-control" id="search_term" placeholder="Enter Source Location" type="text" name="source">
+					                      <input class="form-control" id="search_term" placeholder="Enter Source Location" type="text" name="source" required>
 					                    </div>
 					                  </div>
 					                  <div class="form-group">
@@ -82,7 +83,7 @@ session_start();
 					                      <div class="input-group-prepend">
 					                        <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
 					                      </div>
-					                      <input class="form-control" id="autofill" placeholder="Enter Destination Location" type="text" name="destination">
+					                      <input class="form-control" id="autofill" placeholder="Enter Destination Location" type="text" name="destination" required>
 					                    </div>
 
 					                   
