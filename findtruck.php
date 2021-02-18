@@ -48,7 +48,7 @@ session_start();
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
   <div class="topnav" id="myTopnav">
-    <a href="main.php" class="active">Home</a>
+    <a href="index.php" class="active">Home</a>
      <a href="logout.php" class="login">Logout
     <?php
      echo $_SESSION['mail'];
@@ -203,8 +203,8 @@ session_start();
   }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU
-&libraries=places&callback=activateSource&callback=initMap"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=
+&libraries=places&callback=activateSource&callback=initMap"></script> -->
 
 </div>
 </body>

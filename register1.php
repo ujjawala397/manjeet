@@ -15,7 +15,7 @@ if(empty($_GET["name"]))
 	
   $message = "Please Enter Name";
   echo "<script type='text/javascript'>alert('$message');</script>";
-  header("refresh:2;url=main.php");
+  header("refresh:2;url=index.php");
   return false;
 }
 else
@@ -26,7 +26,7 @@ else
 
 		$message = "Only Letters are allowed";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-		header("refresh:2;url=main.php");
+		header("refresh:2;url=index.php");
 		return false;
 	}
 	else
@@ -40,7 +40,7 @@ if(empty($_GET["email"]))
 {
   $message = "Email Not Found";
   echo "<script type='text/javascript'>alert('$message');</script>";
-  header("refresh:2;url=main.php");
+  header("refresh:2;url=index.php");
   return false;
 }
 else{
@@ -49,7 +49,7 @@ else{
 	{
 	  $message = "Invalid Email";
 	  echo "<script type='text/javascript'>alert('$message');</script>";
-	  header("refresh:2;url=main.php");
+	  header("refresh:2;url=index.php");
 	  return false;
 	}
 }
@@ -83,7 +83,7 @@ else
 {
 	echo "<span style='color: black; font-size:20px' /> Password Mismatch<br>";
 
-	header("refresh:2;url=main.php");
+	header("refresh:2;url=index.php");
 
 	die();
 
@@ -99,5 +99,5 @@ else
 {
 	echo "<span style='color: black; font-size:20px' /> Registration succesful<br>";
 }
-header("refresh:2;url=main.php");
+header("refresh:2;url=index.php");
 ?>

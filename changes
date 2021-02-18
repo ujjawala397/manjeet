@@ -1,0 +1,9 @@
+1-new folder->maps.php (add maps api key)
+2-paytm->paytmKit->lib->cofig-paytm (add payment config 5 things)
+3-findtruck.php (line 206 add maps api)
+4-send email->new folder->credential.php
+5-maps.php (line 37 add map api key)
+6-truck.php( line 116 add map api key
+7-truckform.php (line 157 add map api key)
+8-addtruck.php(line 167 add 2factor api key for sms)
+9-info.php (line 96 and 101 map api)

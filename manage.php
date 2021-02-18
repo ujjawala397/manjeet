@@ -20,7 +20,7 @@
     <div class="col-sm-8 col-md-8 col-xs-8 col-lg-8"><span style="color:orange; font-size:60px;">Connector</span> <span class="over" style="font-size: 60px">World</span></div>
   </div>
   <div class="topnav" id="myTopnav">
-    <a href="main.php" class="active">Home</a>
+    <a href="index.php" class="active">Home</a>
     <a href="truck.php">Book</a>
     <a href="contact_us.php">Contact</a>
     

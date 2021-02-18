@@ -43,7 +43,7 @@ session_start();
 
 	
 	<div class="topnav" id="myTopnav">
-    <a href="main.php" class="active">Home</a>
+    <a href="index.php" class="active">Home</a>
     <a href="logout.php"> Logout
     	<?php
      echo $_SESSION['mail'];
@@ -113,8 +113,8 @@ session_start();
 	}
 </script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU
-&libraries=places&callback=activateSource"></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= 
+&libraries=places&callback=activateSource"></script> -->
 
 <table class="table table-dark">
   <thead>

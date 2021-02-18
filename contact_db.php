@@ -46,7 +46,7 @@ if(empty($_POST["email"]))
 {
   $message = "Email Not Found";
   echo "<script type='text/javascript'>alert('$message');</script>";
-  header("refresh:2;url=main.php");
+  header("refresh:2;url=index.php");
   return false;
 }
 else{
@@ -55,7 +55,7 @@ else{
 	{
 	  $message = "Invalid Email";
 	  echo "<script type='text/javascript'>alert('$message');</script>";
-	  header("refresh:2;url=main.php");
+	  header("refresh:2;url=index.php");
 	  return false;
 	}
 }

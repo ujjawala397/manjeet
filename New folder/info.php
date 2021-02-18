@@ -93,12 +93,12 @@
 	}
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU
+<script src="https://maps.googleapis.com/maps/api/js?key=
 &libraries=places&callback=activateSource"></script>
 
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnP3T0pM60itcZbJWxc9OWR9G9lp6OPIU&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key= &callback=initMap">
     </script>
   </body>
 </html>

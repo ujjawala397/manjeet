@@ -128,7 +128,7 @@ $con=mysqli_connect('localhost','root','');
 		{
 		  $message = "Email Not Found";
 		  echo "<script type='text/javascript'>alert('$message');</script>";
-		  header("refresh:2;url=main.php");
+		  header("refresh:2;url=index.php");
 		  $flag=0;
 		  return false;
 		}
@@ -138,7 +138,7 @@ $con=mysqli_connect('localhost','root','');
 			{
 			  $message = "Invalid Email";
 			  echo "<script type='text/javascript'>alert('$message');</script>";
-			  header("refresh:2;url=main.php");
+			  header("refresh:2;url=index.php");
 			  $flag=0;
 			  return false;
 			}
@@ -164,7 +164,7 @@ $con=mysqli_connect('localhost','root','');
 				if($flag==1)
 				{
 					$otp=mt_rand(100000,999999);
-					$response=file_get_contents("https://2factor.in/API/V1/91ecfbec-0df9-11ea-9fa5-0200cd936042/SMS/$phone_number/$otp");
+					$response=file_get_contents("https://2factor.in/API/    /SMS/$phone_number/$otp");
 					session_start();
 					$_SESSION['otp']=$otp;
 					header("location:verify.php");

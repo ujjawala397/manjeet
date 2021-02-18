@@ -16,6 +16,7 @@ error_reporting(0);
   <!-- Time css and script -->
    	<!-- This have distorted styling-->
     
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
     
     <!--  -->
     <link rel="stylesheet" type="text/css" media="screen"
@@ -110,8 +111,7 @@ error_reporting(0);
 			} else {
 				$message='Message has been sent sucessfully we will contact you soon';
 			    echo "<script type='text/javascript'>alert('$message');</script>";
-			  header("refresh:0;url=../paytm/shopping.php");
-			     // header("refresh:0;url=../razorpay/index.php");
+			 header("refresh:0;url=../paytm/shopping.php");
 			}
 		}
 	 ?>
@@ -135,13 +135,13 @@ error_reporting(0);
 	            </div>
 
 
-	           <!--   <div  id="datetimepicker3" class="col-sm-9 form-group" class="input-append">
+	             <div  id="datetimepicker3" class="col-sm-9 form-group" class="input-append">
 	             	 <label for="subject">Enter time:</label>
     				<input data-format="hh:mm:ss" type="text" class="form-control" value="Enter time" name="time" readonly="">
     				<span class="add-on">
       				<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>	
     </span>
-  </div> -->
+  </div>
 	            <div class="col-sm-9 form-group">
 	                <label for="subject">Enter weight:</label>
 	                <input type="number" class="form-control" name="weight" placeholder="Enter weight in quintals">

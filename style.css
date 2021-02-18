@@ -33,7 +33,7 @@
   }
 
   .active {
-    background-color: #4CAF50;
+  background-color: #4CAF50;
     color: white;
   }
 
@@ -63,10 +63,9 @@
     }
   }
 .c3{
-  background-image: url("range.jpg");
+  background-image: url("Range.jpg"); 
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: auto;
 }
-

@@ -26,7 +26,7 @@ else
 		session_unset();
 		$message = "No Such user exists \\n Please Register ";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-		header("refresh:0;url=main.php");}
+		header("refresh:0;url=index.php");}
 	else
 	{		
 		$message = "Login successful";
